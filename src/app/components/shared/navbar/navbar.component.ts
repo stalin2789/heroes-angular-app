@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+//ocuoamos la importacion del router para poder navegar
 
 @Component({
   selector: 'app-navbar',
@@ -6,14 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
 
   buscarHeroe(termino: string){
-    console.log(termino);
+    // console.log(termino);
+    this.router.navigate(['/busqueda', termino])
   }
 
 }
